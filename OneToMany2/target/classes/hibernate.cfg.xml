@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection configuration -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/anudipdb</property>
+        <property name="hibernate.connection.username">root</property>
+
+        <!-- Current session context strategy -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Connection pool configuration -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+
+        <!-- Dialect for the specific database (MySQL in this case) -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Schema generation mode (you might want to change this to 'update' for a production environment) -->
+        <property name="hbm2ddl.auto">create</property>
+
+        <!-- Display SQL statements in the console (for debugging) -->
+        <property name="show_sql">true</property>
+
+        <!-- Mapping of entity classes (Student and Course) -->
+        <mapping class="com.Swapnil.entity.Student"></mapping>
+        <mapping class="com.Swapnil.entity.Course"></mapping>
+    </session-factory>
+</hibernate-configuration>
